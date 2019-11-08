@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>r/Argentina programa | Intro a JavaScript | Tarea Clase 5</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <form id="formulario" name="formulario">
+
+            <h3>Tarea Clase 5</h3>
+            <br>
+            <label for="nombre-usuario">Nombre:</label>
+            <input type="text" id="nombre-usuario" />
+            <label for="anio-actual">Año actual:</label>
+            <input type="number" id="anio-actual" />
+            <label for="anio-nacimiento">Año de nacimiento:</label>
+            <input type="number" id="anio-nacimiento" />
+            <label for="salario-mensual">Salario mensual:</label>
+            <input type="number" id="salario-mensual" />
+            <label for="dias-vacaciones">Dias de vacaciones:</label>
+            <input type="number" id="dias-vacaciones" max="365" />
+            <label for="horas-trabajo">Horas de trabajo:</label>
+            <input type="number" id="horas-trabajo" max="24" />
+            <div class="botones">
+                <button type="button" id="boton-resultado" class="button" name="calcular"><span>Calcular</span></button>
+                <button type="reset" id="reset" class="button" name="reset">Reiniciar</button>
+            </div>
+
+            <div id="resultado" name="resultado"></div>
+    </div>
+    </form>
+
+    <div class="footer">
+        <footer>Nacho Caiafa</footer>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="pruebas.js"></script>
+
+</body>
+
+</html>
