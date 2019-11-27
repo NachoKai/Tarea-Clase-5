@@ -17,8 +17,7 @@ button {
 }
 
 .contenedor {
-    padding: 5px;
-    margin: 5px;
+    min-height: calc(100vh - 18px);
     display: flex;
     background-color: #2a333d;
     align-items: center;
@@ -148,7 +147,8 @@ button:focus {
     font-weight: 700;
 }
 
-.footer {
+footer {
+    height: 18px;
     background: #2a333d;
     color: #ffffff;
     text-align: center;
