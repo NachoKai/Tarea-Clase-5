@@ -8,12 +8,8 @@ function reiniciar() {
     nodoResultado.innerText = ''
 }
 
-function calcularEdad(anioActual, anioNacimiento) {
-    return anioActual - anioNacimiento;
-}
-function calcularSalarioAnual(salarioMensual) {
-    return (salarioMensual * 12)
-}
+calcularEdad = (anioActual, anioNacimiento) => anioActual - anioNacimiento
+calcularSalarioAnual = (salarioMensual) => (salarioMensual * 12)
 
 function mostrarResultado() {
     let $anioActual = Number($form.anioActual.value)
@@ -30,22 +26,13 @@ function mostrarResultado() {
     }
 }
 
-$calcularResultado.onclick = function () {
-    mostrarResultado()
-}
-
-$reset.onclick = function () {
-    reiniciar()
-}
+$calcularResultado.onclick = () => mostrarResultado()
+$reset.onclick = () => reiniciar()
 
 let $calcularTodo = document.querySelector("#boton-resultado")
 $calcularTodo.onclick = function () {
-    function calcularSalarioDiario(salarioAnual) {
-        return (salarioAnual / diasLaborales)
-    }
-    function calcularSalarioHora(salarioDiario) {
-        return (salarioDiario / horasTrabajo)
-    }
+    calcularSalarioDiario = (salarioAnual) => (salarioAnual / diasLaborales)
+    calcularSalarioHora = (salarioDiario) => (salarioDiario / horasTrabajo)
 
     let horasTrabajo = Number(document.querySelector("#horas-trabajo").value);
     let diasVacaciones = Number(document.querySelector("#dias-vacaciones").value);
@@ -60,7 +47,7 @@ $calcularTodo.onclick = function () {
     let nombreUsuario = document.querySelector("#nombre-usuario").value
     let nombreUsuarioMayuscula = nombreUsuario.charAt(0).toUpperCase() + nombreUsuario.slice(1)
     document.querySelector("#resultado").className = 'valido'
-    document.querySelector("#resultado").innerText = 
-    `Hola ${nombreUsuarioMayuscula}! Naciste en el año ${anioNacimiento} y estamos en el año ${anioActual}, por lo tanto tu edad aproximada es de ${edadActual} años. Tu salario mensual es de: $${salarioMensual}. Tu salario anual es de $${salarioAnual}. Tu salario diario es de $${salarioDiario.toFixed(0)}. Y tu salario por hora es de $${salarioHora.toFixed(0)}.`;
+    document.querySelector("#resultado").innerText =
+        `Hola ${nombreUsuarioMayuscula}! Naciste en el año ${anioNacimiento} y estamos en el año ${anioActual}, por lo tanto tu edad aproximada es de ${edadActual} años. Tu salario mensual es de: $${salarioMensual}. Tu salario anual es de $${salarioAnual}. Tu salario diario es de $${salarioDiario.toFixed(0)}. Y tu salario por hora es de $${salarioHora.toFixed(0)}.`;
     return false;
 }
